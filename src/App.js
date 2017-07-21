@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import axios from 'axios'
 import './App.scss';
 import Nav from './components/Nav/Nav'
 import {updateQuery} from './redux/actions/queryActions'
+const BASE_URL = 'https://www.fohrcard.com/front-end-data-test'
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +20,10 @@ class App extends Component {
 
   handleRequest(key){
     if(key === 13){
+      const {query} = this.props
+      axios.get(`${BASE_URL}/${query}`)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err))
       
     }
   }
@@ -35,10 +41,9 @@ class App extends Component {
 
 function mapStateToProps(searchReducer){
   const {query, searchResults} = searchReducer
-  console.log(query, searchResults)
   return {
-    query,
-    searchResults
+    query: query,
+    searchResults: searchResults
   }
 }
 
