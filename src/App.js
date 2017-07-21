@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import './App.scss';
 import Nav from './components/Nav/Nav'
-import {updateQuery} from './redux/actions/queryActions'
+import Influencers from './components/Influencers/Influencers'
+import {updateQuery, queryResults} from './redux/actions/queryActions'
 const BASE_URL = 'https://www.fohrcard.com/front-end-data-test'
 
 class App extends Component {
@@ -22,18 +23,32 @@ class App extends Component {
     if(key === 13){
       const {query} = this.props
       axios.get(`${BASE_URL}/${query}`)
-        .then(res => console.log(res.data))
+        .then(res => this.props.queryResults(res.data.data))
         .catch(err => console.log(err))
-      
     }
   }
 
 
   render() {
+    const influencersArray = this.props.searchResults.map((person, i) =>
+      <Influencers key={i}
+                   site={person.url}
+                   first={person.firstName}
+                   last={person.lastName}
+                   blog={person.name}
+                   location={person.location}
+                   followers={person.overall_followers}
+                   image={person.profile_image}/>
+    )
     return (
-      <div>
-        <Nav query={this.handleQuery}
-             request={this.handleRequest}/>
+      <div className="main-container">
+        <div>
+          <Nav query={this.handleQuery}
+               request={this.handleRequest}/>
+        </div>
+        <div className="result-container">
+          {influencersArray}
+        </div>
       </div>
     );
   }
@@ -47,4 +62,4 @@ function mapStateToProps(searchReducer){
   }
 }
 
-export default connect(mapStateToProps, {updateQuery})(App)
+export default connect(mapStateToProps, {updateQuery, queryResults})(App)

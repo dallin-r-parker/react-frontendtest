@@ -4,3 +4,10 @@ export function updateQuery(value) {
 		payload: value
 	}
 }
+
+export function queryResults(value) {
+	return{
+		type: 'RESULTS',
+		payload: value
+	}
+}
