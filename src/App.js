@@ -2,18 +2,32 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import './App.scss';
 import Nav from './components/Nav/Nav'
+import {updateQuery} from './redux/actions/queryActions'
 
 class App extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
+
+    this.handleQuery = this.handleQuery.bind(this)
+    this.handleRequest = this.handleRequest.bind(this)
+  }
+
+  handleQuery(e) {
+    this.props.updateQuery(e)
+  }
+
+  handleRequest(key){
+    if(key === 13){
+      
+    }
   }
 
 
   render() {
     return (
       <div>
-        <Nav/>
+        <Nav query={this.handleQuery}
+             request={this.handleRequest}/>
       </div>
     );
   }
@@ -28,4 +42,4 @@ function mapStateToProps(searchReducer){
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, {updateQuery})(App)
