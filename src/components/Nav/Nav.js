@@ -13,3 +13,5 @@ export default function Nav(props) {
 	)
 
 }
+
+//ONLY PRESSING ENTER!
