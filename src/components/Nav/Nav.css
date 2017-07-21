@@ -1,0 +1,5 @@
+.nav-container {
+  display: flex; }
+  .nav-container img {
+    height: 100px;
+    width: 100px; }

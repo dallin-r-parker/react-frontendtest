@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import './App.scss';
+import Nav from './components/Nav/Nav'
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h2>Howdy</h2>
+        <Nav/>
       </div>
     );
   }
