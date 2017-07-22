@@ -1,0 +1,36 @@
+@import "../../style/base.scss";
+@import "../../style/fonts.css";
+
+.influencers-container{
+	margin-bottom:50px;
+	.card-wrap{
+		img{
+			box-shadow: -3px 2px 20px -3px #3c3c3c;
+			max-width: 300px;
+		}
+		h3{
+			font-family: hoefler;
+			color: #383838;
+			letter-spacing:.5px;
+			word-spacing:1px;
+			font-size: 1.3em;
+			margin-bottom: 10px;
+		}
+		h4{
+			font-family:roboto-reg;
+			text-transform: uppercase;
+			word-spacing:1px;
+			margin: 0;
+			font-size: 0.8em;
+			color: #7D7E86;
+			letter-spacing: 0.5px;
+			font-weight:bold;
+		}
+		p{
+			font-family:roboto-reg;
+			color:#A5A0A0;
+			font-size:.8em;
+			margin:5px 0px;
+		}
+	}
+}

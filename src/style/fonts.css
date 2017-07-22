@@ -1,0 +1,14 @@
+@font-face {
+	font-family: hoefler;
+	src: url(../Assets/hoefler_text.ttf)format('truetype');
+}
+
+@font-face {
+	font-family: roboto-reg;
+	src: url(../Assets/Roboto-Regular.ttf)format('truetype');
+}
+
+@font-face {
+	font-family: roboto-thin;
+	src: url(../Assets/Roboto-Thin.ttf)format('truetype');
+}

@@ -10,7 +10,6 @@ export default function Nav(props) {
 	}
 
 	function handleRequest(e) {
-		console.log(e.keyCode)
 		props.request(e.keyCode)
 	}
 

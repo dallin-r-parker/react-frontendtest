@@ -1,15 +1,18 @@
 import React from 'react'
+import './Influencers.css'
 
 export default function Influencers(props) {
-	console.log(props)
 	return(
 		<div className="influencers-container">
-			<img src={props.image} alt=""/>
-			<blog-title>{props.blog}</blog-title>
-			<blogger>{props.first} {props.last}</blogger>
-			<p>{props.site}</p>
-			<p>{props.location}</p>
-			<p>{props.followers} total followers</p>
+				<div className="card-wrap">
+				<img src={props.image}
+				     alt="{props.blog}"/>
+				<h3>{props.blog}</h3>
+				<h4>BY {props.first} {props.last}</h4>
+				<p>{props.site}</p>
+				<p>{props.location}</p>
+				<p>{props.followers} total followers</p>
+			</div>
 		</div>
 	)
 }

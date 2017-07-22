@@ -1,3 +1,4 @@
+
 export function updateQuery(value) {
 	return {
 		type: 'QUERY',
@@ -6,7 +7,7 @@ export function updateQuery(value) {
 }
 
 export function queryResults(value) {
-	return{
+	return {
 		type: 'RESULTS',
 		payload: value
 	}
